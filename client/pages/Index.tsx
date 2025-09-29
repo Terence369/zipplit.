@@ -1,4 +1,4 @@
-import StoreButtons from "@/components/shared/StoreButtons";
+import { useState } from "react";
 
 function SectionHeading({ kicker, title, intro }: { kicker?: string; title: React.ReactNode; intro?: string }) {
   return (
@@ -31,16 +31,15 @@ export default function Index() {
               <span className="text-primary">zipplit</span>
             </h1>
             <p className="mt-4 text-xl text-muted-foreground">
-              Experience fresh catch and cloud kitchen meals delivered in 10-15 minutes
+              We’re cooking up something special. Zipplit is coming soon to Kochi.
             </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <div className="mt-8 flex items-center justify-center">
               <a
-                href="#download"
-                className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
+                href="#waitlist"
+                className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-secondary"
               >
-                Order Now
+                Join Waitlist
               </a>
-              <StoreButtons />
             </div>
             <a href="#better" className="mt-16 inline-flex items-center gap-2 text-sm text-foreground/70 hover:text-foreground">
               <span>Scroll down</span>
@@ -114,9 +113,7 @@ export default function Index() {
                 <div className="mt-10 rounded-2xl bg-gradient-to-b from-primary/15 to-transparent p-6 text-center">
                   <div className="font-display text-3xl font-extrabold text-primary">zipplit</div>
                   <p className="mt-2 text-sm text-neutral-600">Kochi's fastest delivery</p>
-                  <div className="mt-5">
-                    <a href="#download" className="rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white">Start ordering now</a>
-                  </div>
+                  <div className="mt-5 text-xs text-neutral-600">App coming soon</div>
                 </div>
               </div>
             </div>
@@ -182,38 +179,20 @@ export default function Index() {
         </div>
       </section>
 
-      {/* DOWNLOAD APP */}
-      <section id="download" className="mx-auto mt-24 max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* WAITLIST */}
+      <section id="waitlist" className="mx-auto mt-24 max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 rounded-3xl bg-gradient-to-b from-accent to-white p-8 md:grid-cols-2 md:p-12">
           <div>
-            <h3 className="font-display text-3xl font-extrabold">Download the app now!</h3>
-            <p className="mt-2 text-muted-foreground">Experience seamless online ordering only on the Zipplit app</p>
-            <div className="mt-6">
-              <StoreButtons />
-            </div>
+            <h3 className="font-display text-3xl font-extrabold">Be first to know</h3>
+            <p className="mt-2 text-muted-foreground">Zipplit app is coming soon. Join the waitlist and we’ll notify you when we launch.</p>
+            <WaitlistForm />
           </div>
           <div className="flex items-center justify-center">
             <div className="rounded-2xl border p-6 text-center shadow-sm">
-              <div className="font-semibold">Scan the QR code to
-                <br />download the app
-              </div>
-              <div className="mt-4 inline-block rounded-lg border bg-white p-2 shadow">
-                {/* handcrafted QR-like svg */}
-                <svg width="140" height="140" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="140" height="140" fill="#fff" />
-                  <rect x="10" y="10" width="40" height="40" fill="#000" />
-                  <rect x="90" y="10" width="40" height="40" fill="#000" />
-                  <rect x="10" y="90" width="40" height="40" fill="#000" />
-                  <rect x="56" y="56" width="10" height="10" fill="#000" />
-                  <rect x="70" y="56" width="10" height="10" fill="#000" />
-                  <rect x="84" y="56" width="10" height="10" fill="#000" />
-                  <rect x="56" y="70" width="10" height="10" fill="#000" />
-                  <rect x="70" y="70" width="10" height="10" fill="#000" />
-                  <rect x="84" y="70" width="10" height="10" fill="#000" />
-                  <rect x="56" y="84" width="10" height="10" fill="#000" />
-                  <rect x="70" y="84" width="10" height="10" fill="#000" />
-                  <rect x="84" y="84" width="10" height="10" fill="#000" />
-                </svg>
+              <div className="font-semibold">Coming soon on</div>
+              <div className="mt-3 flex items-center justify-center gap-3 text-sm text-muted-foreground">
+                <span className="rounded-md border px-3 py-1">App Store</span>
+                <span className="rounded-md border px-3 py-1">Google Play</span>
               </div>
             </div>
           </div>

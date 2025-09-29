@@ -22,25 +22,25 @@
     --popover-foreground: 222.2 84% 4.9%;
 
     /* Zipplit brand */
-    /* Palette: Deep Teal, Medium Teal, Coral Red, Soft Pink */
-    --primary: 356 78% 56%; /* Coral Red (#E63946) */
+    /* Palette: Deep Teal, Medium Teal, Mint */
+    --primary: 173 43% 51%; /* Medium Teal (#4DB8AC) */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 173 43% 51%; /* Medium Teal (#4DB8AC) */
+    --secondary: 173 33% 41%; /* darker teal for hovers */
     --secondary-foreground: 0 0% 100%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 0 100% 97%; /* Soft Pink (#FFF0F0) */
-    --accent-foreground: 356 78% 40%;
+    --accent: 168 76% 94%; /* Mint tint */
+    --accent-foreground: 181 61% 20%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 356 78% 56%;
+    --ring: 173 43% 51%;
 
     --radius: 0.75rem;
 
@@ -52,13 +52,13 @@
 
     --sidebar-foreground: 240 5.3% 26.1%;
 
-    --sidebar-primary: 356 78% 56%;
+    --sidebar-primary: 173 43% 51%;
 
     --sidebar-primary-foreground: 0 0% 98%;
 
-    --sidebar-accent: 0 100% 97%;
+    --sidebar-accent: 168 76% 94%;
 
-    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-accent-foreground: 181 61% 20%;
 
     --sidebar-border: 220 13% 91%;
 
@@ -75,10 +75,10 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 356 78% 56%;
+    --primary: 173 43% 51%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 173 43% 40%;
+    --secondary: 173 33% 41%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 217.2 32.6% 17.5%;
@@ -92,10 +92,10 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 356 78% 56%;
+    --ring: 173 43% 51%;
     --sidebar-background: 181 61% 15%; /* deep teal */
     --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 356 78% 56%;
+    --sidebar-primary: 173 43% 51%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 217.2 32.6% 17.5%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import StoreButtons from "@/components/shared/StoreButtons";
 
 function SectionHeading({ kicker, title, intro }: { kicker?: string; title: React.ReactNode; intro?: string }) {
   return (
@@ -66,13 +67,16 @@ export default function Index() {
             <p className="mt-4 text-xl text-muted-foreground">
               We’re cooking up something special. Zipplit is coming soon to Kochi.
             </p>
-            <div className="mt-8 flex items-center justify-center">
+            <div className="mt-8 flex flex-col items-center justify-center gap-4">
               <a
                 href="#waitlist"
                 className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-secondary"
               >
                 Join Waitlist
               </a>
+              <div className="opacity-90">
+                <StoreButtons />
+              </div>
             </div>
             <a href="#better" className="mt-16 inline-flex items-center gap-2 text-sm text-foreground/70 hover:text-foreground">
               <span>Scroll down</span>
@@ -223,9 +227,8 @@ export default function Index() {
           <div className="flex items-center justify-center">
             <div className="rounded-2xl border p-6 text-center shadow-sm">
               <div className="font-semibold">Coming soon on</div>
-              <div className="mt-3 flex items-center justify-center gap-3 text-sm text-muted-foreground">
-                <span className="rounded-md border px-3 py-1">App Store</span>
-                <span className="rounded-md border px-3 py-1">Google Play</span>
+              <div className="mt-4 flex items-center justify-center">
+                <StoreButtons />
               </div>
             </div>
           </div>

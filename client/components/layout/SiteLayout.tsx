@@ -6,7 +6,8 @@ export default function SiteLayout() {
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
-      <main className="flex-1 pt-24">{/* space for fixed header */}
+      <main className="flex-1 pt-24">
+        {/* space for fixed header */}
         <Outlet />
       </main>
       <Footer />

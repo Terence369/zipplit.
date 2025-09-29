@@ -111,16 +111,41 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+    font-family:
+      Inter,
+      system-ui,
+      -apple-system,
+      Segoe UI,
+      Roboto,
+      "Helvetica Neue",
+      Arial,
+      "Noto Sans",
+      "Apple Color Emoji",
+      "Segoe UI Emoji";
   }
 }
 
 @layer utilities {
   .font-display {
-    font-family: Poppins, Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans";
+    font-family:
+      Poppins,
+      Inter,
+      system-ui,
+      -apple-system,
+      Segoe UI,
+      Roboto,
+      "Helvetica Neue",
+      Arial,
+      "Noto Sans";
   }
   .gold-text {
-    background: linear-gradient(90deg, #d6b25e 0%, #ffe89a 35%, #f4d26a 55%, #caa448 100%);
+    background: linear-gradient(
+      90deg,
+      #d6b25e 0%,
+      #ffe89a 35%,
+      #f4d26a 55%,
+      #caa448 100%
+    );
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -129,8 +154,14 @@
     box-shadow: 0 0 0 2px rgba(214, 178, 94, 0.4);
   }
   .soft-card {
-    background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.75));
-    box-shadow: 0 10px 30px rgba(16, 24, 40, 0.06), inset 0 1px 0 rgba(255,255,255,0.6);
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.75)
+    );
+    box-shadow:
+      0 10px 30px rgba(16, 24, 40, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(6px);
   }
 }

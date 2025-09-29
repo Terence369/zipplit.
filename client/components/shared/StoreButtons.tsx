@@ -14,7 +14,11 @@ function AppleIcon(props: React.SVGProps<SVGSVGElement>) {
 function PlayIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 600 600" aria-hidden="true" {...props}>
-      <path fill="#00f076" d="M300 0a300 300 0 110 600 300 300 0 010-600z" opacity=".2" />
+      <path
+        fill="#00f076"
+        d="M300 0a300 300 0 110 600 300 300 0 010-600z"
+        opacity=".2"
+      />
       <path fill="currentColor" d="M230 175l190 125-190 125V175z" />
     </svg>
   );
@@ -42,14 +46,20 @@ export function StoreButton({
         {icon}
       </span>
       <span className="text-left leading-none">
-        <span className="block text-[10px] uppercase opacity-70">{subtitle}</span>
+        <span className="block text-[10px] uppercase opacity-70">
+          {subtitle}
+        </span>
         <span className="block text-sm font-semibold">{title}</span>
       </span>
     </a>
   );
 }
 
-export default function StoreButtons({ className = "" }: { className?: string }) {
+export default function StoreButtons({
+  className = "",
+}: {
+  className?: string;
+}) {
   return (
     <div className={`flex flex-wrap items-center gap-3 ${className}`}>
       <StoreButton

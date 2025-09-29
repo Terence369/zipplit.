@@ -1,62 +1,224 @@
-import { DemoResponse } from "@shared/api";
-import { useEffect, useState } from "react";
+import StoreButtons from "@/components/shared/StoreButtons";
+
+function SectionHeading({ kicker, title, intro }: { kicker?: string; title: React.ReactNode; intro?: string }) {
+  return (
+    <div className="mx-auto max-w-3xl text-center">
+      {kicker && (
+        <div className="mb-2 text-xs font-semibold uppercase tracking-wider text-primary/80">{kicker}</div>
+      )}
+      <h2 className="font-display text-3xl font-extrabold leading-tight sm:text-4xl">{title}</h2>
+      {intro && <p className="mt-4 text-base text-muted-foreground">{intro}</p>}
+    </div>
+  );
+}
 
 export default function Index() {
-  const [exampleFromServer, setExampleFromServer] = useState("");
-  // Fetch users on component mount
-  useEffect(() => {
-    fetchDemo();
-  }, []);
-
-  // Example of how to fetch data from the server (if needed)
-  const fetchDemo = async () => {
-    try {
-      const response = await fetch("/api/demo");
-      const data = (await response.json()) as DemoResponse;
-      setExampleFromServer(data.message);
-    } catch (error) {
-      console.error("Error fetching hello:", error);
-    }
-  };
-
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200">
-      <div className="text-center">
-        {/* TODO: FUSION_GENERATION_APP_PLACEHOLDER replace everything here with the actual app! */}
-        <h1 className="text-2xl font-semibold text-slate-800 flex items-center justify-center gap-3">
-          <svg
-            className="animate-spin h-8 w-8 text-slate-400"
-            viewBox="0 0 50 50"
-          >
-            <circle
-              className="opacity-30"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
-            />
-            <circle
-              className="text-slate-600"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
-              strokeDasharray="100"
-              strokeDashoffset="75"
-            />
-          </svg>
-          Generating your app...
-        </h1>
-        <p className="mt-4 text-slate-600 max-w-md">
-          Watch the chat on the left for updates that might need your attention
-          to finish generating
-        </p>
-        <p className="mt-4 hidden max-w-md">{exampleFromServer}</p>
-      </div>
+    <div className="relative">
+      {/* HERO */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-accent to-white">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute -left-20 -top-24 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
+          <div className="absolute -bottom-24 -right-20 h-72 w-72 rounded-full bg-rose-300/30 blur-3xl" />
+        </div>
+        <div className="mx-auto max-w-7xl px-4 pb-24 pt-40 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-4xl text-center">
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-white/70 px-3 py-1 text-xs font-semibold text-primary shadow-sm backdrop-blur">
+              Kochi's fastest
+              <span className="hidden sm:inline">seafood & budget meals app</span>
+            </div>
+            <h1 className="mt-6 font-display text-5xl font-extrabold tracking-tight sm:text-6xl">
+              <span className="text-primary">zipplit</span>
+            </h1>
+            <p className="mt-4 text-xl text-muted-foreground">
+              Experience fresh catch and cloud kitchen meals delivered in 10-15 minutes
+            </p>
+            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <a
+                href="#download"
+                className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
+              >
+                Order Now
+              </a>
+              <StoreButtons />
+            </div>
+            <a href="#better" className="mt-16 inline-flex items-center gap-2 text-sm text-foreground/70 hover:text-foreground">
+              <span>Scroll down</span>
+              <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M12 5v14" />
+                <path d="m19 12-7 7-7-7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* BETTER FOOD */}
+      <section id="better" className="relative mx-auto -mt-8 max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="soft-card rounded-3xl p-10">
+          <SectionHeading
+            title={<>
+              <span className="font-display text-primary">Better food</span>
+              <br />
+              for more people
+            </>}
+            intro="We use the freshest catch and budget-friendly ingredients to bring quality meals to your doorstep — whether it's seafood or everyday favorites."
+          />
+          <div className="mx-auto mt-10 grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-3">
+            <div className="rounded-2xl border p-6 text-center shadow-sm">
+              <div className="text-2xl font-extrabold">3,00,000+</div>
+              <div className="mt-1 text-sm text-muted-foreground">restaurants</div>
+            </div>
+            <div className="rounded-2xl border p-6 text-center shadow-sm">
+              <div className="text-2xl font-extrabold">800+</div>
+              <div className="mt-1 text-sm text-muted-foreground">cities</div>
+            </div>
+            <div className="rounded-2xl border p-6 text-center shadow-sm">
+              <div className="text-2xl font-extrabold">3 Billion+</div>
+              <div className="mt-1 text-sm text-muted-foreground">orders delivered</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FEATURES AROUND PHONE */}
+      <section id="features" className="mx-auto mt-20 max-w-7xl px-4 sm:px-6 lg:px-8">
+        <SectionHeading
+          title={<>
+            What's waiting for you
+            <br />
+            on the app?
+          </>}
+          intro="Our app offers a wide range of food options, from fresh seafood to budget cloud kitchen meals."
+        />
+        <div className="relative mx-auto mt-12 grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-3">
+          {/* Left column */}
+          <div className="grid gap-6">
+            {[
+              { emoji: "🍱", title: "Meals", desc: "Cloud Kitchen meals from ₹49" },
+              { emoji: "🐟", title: "Seafood", desc: "Fresh catch & hot meals" },
+              { emoji: "📦", title: "Call Ahead", desc: "Ready-to-cook packs" },
+            ].map((f) => (
+              <div key={f.title} className="rounded-2xl border p-6 shadow-sm">
+                <div className="text-2xl">{f.emoji}</div>
+                <div className="mt-2 font-semibold">{f.title}</div>
+                <div className="text-sm text-muted-foreground">{f.desc}</div>
+              </div>
+            ))}
+          </div>
+          {/* Center phone */}
+          <div className="order-first mx-auto w-full max-w-xs md:order-none">
+            <div className="relative mx-auto aspect-[9/18] w-64 rounded-[2.2rem] border border-black/10 bg-neutral-900 p-2 shadow-xl">
+              <div className="h-full rounded-[1.9rem] bg-neutral-100 p-4">
+                <div className="mx-auto mt-3 h-1.5 w-16 rounded-full bg-neutral-300" />
+                <div className="mt-10 rounded-2xl bg-gradient-to-b from-primary/15 to-transparent p-6 text-center">
+                  <div className="font-display text-3xl font-extrabold text-primary">zipplit</div>
+                  <p className="mt-2 text-sm text-neutral-600">Kochi's fastest delivery</p>
+                  <div className="mt-5">
+                    <a href="#download" className="rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white">Start ordering now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* Right column */}
+          <div className="grid gap-6">
+            {[
+              { emoji: "🎫", title: "Vouchers", desc: "Exclusive deals" },
+              { emoji: "🎁", title: "Coupons", desc: "Launch offers" },
+              { emoji: "🏪", title: "Collect", desc: "Pick-up option" },
+            ].map((f) => (
+              <div key={f.title} className="rounded-2xl border p-6 shadow-sm">
+                <div className="text-2xl">{f.emoji}</div>
+                <div className="mt-2 font-semibold">{f.title}</div>
+                <div className="text-sm text-muted-foreground">{f.desc}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* GOLD SECTION */}
+      <section id="gold" className="relative mt-24 bg-neutral-950 py-20 text-neutral-100">
+        <div className="absolute inset-0 opacity-30" style={{background:
+          "radial-gradient(60% 50% at 30% 10%, rgba(255,215,128,.35), transparent), radial-gradient(50% 40% at 80% 60%, rgba(255,232,154,.2), transparent)"}} />
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="font-display text-3xl font-extrabold"><span className="text-white">zipplit</span> <span className="gold-text">GOLD</span></div>
+            <p className="mt-2 text-neutral-300">Enjoy a world full of benefits with one membership</p>
+            <div className="mt-6 text-sm tracking-widest text-neutral-400">★ GOLD BENEFITS ★</div>
+          </div>
+          <div className="mx-auto mt-10 grid max-w-3xl grid-cols-1 gap-6 sm:grid-cols-2">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-lg">
+              <div className="text-xl font-bold">💰 Free Delivery</div>
+              <div className="mt-1 text-sm text-neutral-300">on orders every day / km</div>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-lg">
+              <div className="text-xl font-bold">🎯 Up to 30% extra off</div>
+              <div className="mt-1 text-sm text-neutral-300">on 20,000+ partner restaurants</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ETERNAL BRANDS */}
+      <section id="brands" className="mx-auto mt-24 max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center">
+          <div className="font-display text-3xl font-extrabold">eternal</div>
+          <p className="mt-2 text-sm tracking-widest text-neutral-500">POWERING KOCHI'S CHANGING LIFESTYLE</p>
+        </div>
+        <div className="mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            { name: "zipplit", desc: "Order fresh seafood and budget cloud kitchen meals from Kochi's best delivery app" },
+            { name: "blinkit", desc: "Get groceries delivered to your doorstep in minutes from our quick commerce platform" },
+            { name: "district", desc: "Discover and book the best dining, entertainment, and wellness experiences" },
+            { name: "hyperpure", desc: "Quality ingredients and supplies for restaurants, delivered fresh every day" },
+          ].map((b) => (
+            <div key={b.name} className="soft-card rounded-2xl p-6">
+              <div className="font-display text-lg font-bold text-primary">{b.name}</div>
+              <p className="mt-2 text-sm text-muted-foreground">{b.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* DOWNLOAD APP */}
+      <section id="download" className="mx-auto mt-24 max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-8 rounded-3xl bg-gradient-to-b from-accent to-white p-8 md:grid-cols-2 md:p-12">
+          <div>
+            <h3 className="font-display text-3xl font-extrabold">Download the app now!</h3>
+            <p className="mt-2 text-muted-foreground">Experience seamless online ordering only on the Zipplit app</p>
+            <div className="mt-6">
+              <StoreButtons />
+            </div>
+          </div>
+          <div className="flex items-center justify-center">
+            <div className="rounded-2xl border p-6 text-center shadow-sm">
+              <div className="font-semibold">Scan the QR code to
+                <br />download the app
+              </div>
+              <div className="mt-4 inline-block rounded-lg border bg-white p-2 shadow">
+                {/* handcrafted QR-like svg */}
+                <svg width="140" height="140" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="140" height="140" fill="#fff" />
+                  <rect x="10" y="10" width="40" height="40" fill="#000" />
+                  <rect x="90" y="10" width="40" height="40" fill="#000" />
+                  <rect x="10" y="90" width="40" height="40" fill="#000" />
+                  <rect x="56" y="56" width="10" height="10" fill="#000" />
+                  <rect x="70" y="56" width="10" height="10" fill="#000" />
+                  <rect x="84" y="56" width="10" height="10" fill="#000" />
+                  <rect x="56" y="70" width="10" height="10" fill="#000" />
+                  <rect x="70" y="70" width="10" height="10" fill="#000" />
+                  <rect x="84" y="70" width="10" height="10" fill="#000" />
+                  <rect x="56" y="84" width="10" height="10" fill="#000" />
+                  <rect x="70" y="84" width="10" height="10" fill="#000" />
+                  <rect x="84" y="84" width="10" height="10" fill="#000" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

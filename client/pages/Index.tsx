@@ -12,6 +12,39 @@ function SectionHeading({ kicker, title, intro }: { kicker?: string; title: Reac
   );
 }
 
+function WaitlistForm() {
+  const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  return (
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return;
+        setSubmitted(true);
+      }}
+      className="mt-6 flex w-full max-w-md items-center gap-3"
+    >
+      <input
+        type="email"
+        required
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="you@example.com"
+        className="flex-1 rounded-xl border px-4 py-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
+      />
+      <button
+        type="submit"
+        className="rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-sm hover:bg-secondary"
+      >
+        Notify me
+      </button>
+      {submitted && (
+        <span className="ml-2 text-sm text-green-700">Thanks! We’ll be in touch.</span>
+      )}
+    </form>
+  );
+}
+
 export default function Index() {
   return (
     <div className="relative">

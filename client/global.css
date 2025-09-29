@@ -22,36 +22,41 @@
     --popover-foreground: 222.2 84% 4.9%;
 
     /* Zipplit brand */
-    --primary: 357 78% 52%; /* Zipplit red */
+    /* Palette: Deep Teal, Medium Teal, Coral Red, Soft Pink */
+    --primary: 356 78% 56%; /* Coral Red (#E63946) */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 173 43% 51%; /* Medium Teal (#4DB8AC) */
+    --secondary-foreground: 0 0% 100%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 14 92% 95%; /* soft peach for sections */
-    --accent-foreground: 357 78% 40%;
+    --accent: 0 100% 97%; /* Soft Pink (#FFF0F0) */
+    --accent-foreground: 356 78% 40%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 357 78% 52%;
+    --ring: 356 78% 56%;
 
     --radius: 0.75rem;
+
+    /* Brand Deep Teal for header/footer */
+    --brand: 181 61% 15%; /* #0F3D3E */
+    --brand-foreground: 0 0% 100%;
 
     --sidebar-background: 0 0% 98%;
 
     --sidebar-foreground: 240 5.3% 26.1%;
 
-    --sidebar-primary: 357 78% 52%;
+    --sidebar-primary: 356 78% 56%;
 
     --sidebar-primary-foreground: 0 0% 98%;
 
-    --sidebar-accent: 14 92% 95%;
+    --sidebar-accent: 0 100% 97%;
 
     --sidebar-accent-foreground: 240 5.9% 10%;
 
@@ -70,11 +75,11 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 357 78% 52%;
+    --primary: 356 78% 56%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 173 43% 40%;
+    --secondary-foreground: 0 0% 100%;
 
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
@@ -87,14 +92,14 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 357 78% 52%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --ring: 356 78% 56%;
+    --sidebar-background: 181 61% 15%; /* deep teal */
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 356 78% 56%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent: 217.2 32.6% 17.5%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-border: 217.2 32.6% 17.5%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
